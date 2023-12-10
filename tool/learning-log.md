@@ -73,6 +73,11 @@ I realized that I didnt know where to code my project yet, and since the tool Dj
 * Authentication and authorization have been previously incorporated into Django, which means you can focus on writing your app because the basic web development functionality has already been done.
 * Replit also allows for real-time collaboration. You can access Replit on any platform that has an active internet connection, and you can edit your code and connect with other developers anytime and anywhere.
 
+**12/04/23**
+
+If we want the "skeleton" of the webiste we would need to have a `django-admin tool` to generate a project folder, the basic file templates, and manage.py, which serves as the project management script.
+
+
 
 X/X/X:
 * Text
