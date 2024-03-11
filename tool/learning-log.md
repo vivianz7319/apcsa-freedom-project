@@ -276,6 +276,13 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
 application = get_wsgi_application()
 ```
 And I also picked out a website template (it would be too much to put here), but it needs a lot of tweeking to fit what we want it to look like.
+
+
+
+
+
+
+
 X/X/X:
 * Text
 
