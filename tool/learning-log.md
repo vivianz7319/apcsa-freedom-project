@@ -277,6 +277,33 @@ application = get_wsgi_application()
 ```
 And I also picked out a website template (it would be too much to put here), but it needs a lot of tweeking to fit what we want it to look like.
 
+**3/18/24**
+When I opened how the HTML of the website looked, I realized there was some issue. The HTML isn't what I expected it to look like. The CSS was not connected to the HTML and I found out why, becasue based off the template the css was put into a different file, which was a minor mistake. I would still need to fix up some parts of the template to make it what we want it to look like, but I did make a html file that would contain what we need to create the webpage. 
+
+It changed from this 
+```html
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Study Cards</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+```
+to this 
+```html
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Study Cards</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+```
 
 
 
