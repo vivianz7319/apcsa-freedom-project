@@ -306,9 +306,34 @@ to this
     </head>
 ```
 
+**3/24/24**
 
-
-
+This week I looked more into trying to build an flashcard looking thing for the website. I realized using the bootstrap coursel might be a bit hard and it wouldnt work as well as just something flipping the card. After a while of looking for something that can replace coursel,I found this [Demo](http://flashbynight.com/tutes/flashcards/demo/) that I think is what Im looking for. 
+But after looking on how  they created the demo and the flashcard that worked on the demo really made my brain jog. What they have is soemthing permanet for the flashcard. Like this: 
+```java
+{"questionlist":[
+ {"cardfront":"CAT",
+ "cardback":"GATO"
+ },
+ {"cardfront":"DOG",
+ "cardback":"PERRO"
+ },
+ {"cardfront":"HORSE",
+ "cardback":"CABALLO"
+ },
+ {"cardfront":"RABBIT",
+ "cardback":"CONEJO"
+ },
+ {"cardfront":"TIGER",
+ "cardback":"TIGRE"
+ },
+ {"cardfront":"KANGAROO",
+ "cardback":"CANGURO"
+ }
+]}
+```
+But I feel like if we are going to use this, or making something like the flashcard we would need to make an functioning array to make it so the user can input what they want to study for. 
+The javascript also looked really long, so I'll look into that this week. 
 
 
 X/X/X:
