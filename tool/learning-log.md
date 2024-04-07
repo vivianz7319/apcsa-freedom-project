@@ -335,6 +335,92 @@ But after looking on how  they created the demo and the flashcard that worked on
 But I feel like if we are going to use this, or making something like the flashcard we would need to make an functioning array to make it so the user can input what they want to study for. 
 The javascript also looked really long, so I'll look into that this week. 
 
+**04/07/2024:**
+
+Right now, I started trying to make the base of the flashcard, so far i've gotten the flashcard to flip and you can see words on both side of the existing flashcard. The problem is that adding the carousel, is a big problem, beacsue we want it to show mutiple flashcards but it wouldnt work. Also adding the color onto the flashcard is also a big problem. 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Card Flip</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <style>
+    body {
+  background-color: lightblue;
+    }
+  </style>
+  <body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <button type="button" id="flip-btn">Flip Card</button>
+            <div class="card">
+              <div id="back" class="cardBack">Back</div>
+              <div id="front" class="cardFront">Front</div>
+            </div>
+          <img class="d-block w-100" src="..." alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <button type="button" id="flip-btn">Flip Card</button>
+            <div class="card">
+              <div id="back" class="cardBack">Back</div>
+              <div id="front" class="cardFront">Front</div>
+            </div>
+            <img class="d-block w-100" src="..." alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <button type="button" id="flip-btn">Flip Card</button>
+            <div class="card">
+              <div id="back" class="cardBack">Back</div>
+              <div id="front" class="cardFront">Front</div>
+            </div>
+          <img class="d-block w-100" src="..." alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+
+
+      const front = document.getElementById('front')
+      const back = document.getElementById('back')
+      const btn = document.getElementById('flip-btn')
+      function handleFlip() {
+        front.classList.toggle('flipped')
+        back.classList.toggle('flipped')
+      }
+      btn.addEventListener('click', handleFlip)
+    </script>
+  </body>
+</html>
+```
+This is what I have so far... I'm still sorta lost but im looking more into it. 
 
 X/X/X:
 * Text
