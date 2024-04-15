@@ -422,6 +422,141 @@ Right now, I started trying to make the base of the flashcard, so far i've gotte
 ```
 This is what I have so far... I'm still sorta lost but im looking more into it. 
 
+**4/14/24**
+This week I figured out a way to create the flashcard thing. But I gave up on the carousel due to the fact that It might be too hard for me to do, but it still works as a regular flash card. Even though I am not very fond of the apperence. That needs to be worked on. But this is what I have so far.
+HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="flashcard.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Flashcards</title>
+</head>
+<body>
+
+  <main>
+
+    <header>
+      <div class="container">
+        <div id="header">
+          <h1>Flashcards</h1>
+          <div>
+            <button id="show_card_box">Add Card</button>
+            <button id="delete_cards">Del Cards</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div id="create_card">
+          <h2>Create Flashcard</h2>
+          <label for="question">Question</label>
+          <textarea id="question" maxlength="280"></textarea>
+          <label for="answer" maxlength="280">Answer</label>
+          <br>
+          <textarea id="answer"></textarea>
+          <div>
+            <button id="save_card">Save</button> <button id="close_card_box">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div id="flashcards"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+```
+JS
+```javascript
+var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
+document.getElementById("save_card").addEventListener("click", () => {
+  addFlashcard();
+});
+
+document.getElementById("delete_cards").addEventListener("click", () => {
+  localStorage.clear();
+  flashcards.innerHTML = '';
+  contentArray = [];
+});
+
+document.getElementById("show_card_box").addEventListener("click", () => {
+  document.getElementById("create_card").style.display = "block";
+});
+
+document.getElementById("close_card_box").addEventListener("click", () => {
+  document.getElementById("create_card").style.display = "none";
+});
+
+flashcardMaker = (text, delThisIndex) => {
+  const flashcard = document.createElement("div");
+  const question = document.createElement('h2');
+  const answer = document.createElement('h2');
+  const del = document.createElement('i');
+
+  flashcard.className = 'flashcard';
+
+  question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
+  question.textContent = text.my_question;
+
+  answer.setAttribute("style", "text-align:center; display:none; color:red");
+  answer.textContent = text.my_answer;
+
+  del.className = "fas fa-minus";
+  del.addEventListener("click", () => {
+    contentArray.splice(delThisIndex, 1);
+    localStorage.setItem('items', JSON.stringify(contentArray));
+    window.location.reload();
+  })
+
+  flashcard.appendChild(question);
+  flashcard.appendChild(answer);
+  flashcard.appendChild(del);
+
+  flashcard.addEventListener("click", () => {
+    if(answer.style.display == "none")
+      answer.style.display = "block";
+    else
+      answer.style.display = "none";
+  })
+
+  document.querySelector("#flashcards").appendChild(flashcard);
+}
+
+contentArray.forEach(flashcardMaker);
+
+addFlashcard = () => {
+  const question = document.querySelector("#question");
+  const answer = document.querySelector("#answer");
+
+  let flashcard_info = {
+    'my_question' : question.value,
+    'my_answer'  : answer.value
+  }
+
+  contentArray.push(flashcard_info);
+  localStorage.setItem('items', JSON.stringify(contentArray));
+  flashcardMaker(contentArray[contentArray.length - 1], contentArray.length - 1);
+  question.value = "";
+  answer.value = "";
+}
+```
+
+
 X/X/X:
 * Text
 
