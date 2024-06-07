@@ -4,19 +4,23 @@ by **X**
 ## Context
 I am a student at [HSTAT](https://www.hstat.org/) in the [Software Engineering Program](https://hstatsep.github.io/). The "Freedom Project" for AP Computer Science A is a year-long project all about making anything using technology.
 
-For my project, I chose to independently study **X** in order to help me make **X**.
+For my project, I chose to independently study **Django** in order to help me make **Flashcard Website**.
 
 ## Links
 
-[Product]()
+[Product](https://refactored-system-v4gpj75jj526xxw-8000.app.github.dev/)
 
-[Presentation]()
+[Presentation](https://docs.google.com/presentation/d/1e7pYnouSV7E0yL3-lYRdPNr6UIxF4-Xa5qylhN-MZUw/edit?usp=sharing)
 
 ## Implications
 ##### PROS
-* 
+* You can use it to study for upcoming exams
+* It can be used in all different age groups
+* You can adjust tol any screen size
+* You can create an account and the account would be remembered 
 ##### CONS
-* 
+* The flashcards are still public to everyone
+* I cannot suffle the deck of cards
 
 
 ## Blog
